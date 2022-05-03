@@ -12,10 +12,13 @@ import java.util.List;
 
 @ContextConfiguration("classpath:applicationContext.xml")
 public class RoleDaoImpl implements RoleDao {
-    @Autowired
     private JdbcTemplate jdbcTemplate;
     @Override
     public List<Role> getRoleList() {
        return jdbcTemplate.query("select * from sys_role", new BeanPropertyRowMapper<Role>(Role.class));
+    }
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 }
