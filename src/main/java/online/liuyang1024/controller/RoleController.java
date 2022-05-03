@@ -5,6 +5,7 @@ import online.liuyang1024.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -17,8 +18,6 @@ public class RoleController {
     private RoleService roleService;
 
 
-
-
     @RequestMapping("/list")
     public ModelAndView list(ModelAndView modelAndView){
         List<Role> roleList=roleService.getRoleList();
@@ -26,4 +25,11 @@ public class RoleController {
         modelAndView.setViewName("role-list");
         return modelAndView;
     }
+
+    @RequestMapping("/addRole")
+    public String addRole(Role role){
+        int i=roleService.addRole(role);
+        return "redirect:/role/list";
+    }
+
 }
