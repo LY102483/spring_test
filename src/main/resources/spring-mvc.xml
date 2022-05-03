@@ -25,7 +25,7 @@
     <mvc:default-servlet-handler/>
 
     <!--组件扫描-->
-    <!--<context:component-scan base-package="online.liuyang1024.controller"/>-->
+    <context:component-scan base-package="online.liuyang1024.controller"/>
 
     <!--配置处理器、映射器-->
     <!--已被弃用这个方法-->
