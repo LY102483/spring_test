@@ -18,8 +18,8 @@ public class RoleController {
     private RoleService roleService;
 
 
-    @RequestMapping("/list")
-    public ModelAndView list(ModelAndView modelAndView){
+    @RequestMapping("/getRoleList")
+    public ModelAndView getRoleList(ModelAndView modelAndView){
         List<Role> roleList=roleService.getRoleList();
         modelAndView.addObject("roleList",roleList);
         modelAndView.setViewName("role-list");
@@ -29,7 +29,7 @@ public class RoleController {
     @RequestMapping("/addRole")
     public String addRole(Role role){
         int i=roleService.addRole(role);
-        return "redirect:/role/list";
+        return "redirect:/role/getRoleList";
     }
 
 }

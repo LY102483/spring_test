@@ -34,11 +34,11 @@
 				<ul class="treeview-menu">
 
 					<li><a
-						href="${pageContext.request.contextPath}/pages/user-list.jsp"> <i
+						href="${pageContext.request.contextPath}/user/getUserList"> <i
 							class="fa fa-circle-o"></i> 用户管理
 					</a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/role/list"> <i
+						href="${pageContext.request.contextPath}/role/getRoleList"> <i
 							class="fa fa-circle-o"></i> 角色管理
 					</a></li>
 					<li><a
