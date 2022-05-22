@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface UserDao {
     public List<User> getUserList();
+
+    public User login(String username, String password);
 }

@@ -23,6 +23,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/login")
+    public String login(String username,String password){
+        User user=userService.login(username,password);
+        if(user==null){
+            return "redirect:  ";
+        }
+        return "main";
+    }
+
     @RequestMapping("getUserList")
     public ModelAndView getUserList(ModelAndView modelAndView){
         List<User> list = userService.getUserList();
